@@ -1,12 +1,15 @@
-﻿using MongoDB.Wrapper.Abstractions;
+﻿#region
 
-namespace MongoDB.Wrapper.Extensions
+using MongoDB.Wrapper.Abstractions;
+
+#endregion
+
+namespace MongoDB.Wrapper.Extensions;
+
+public static class IEntityExtensions
 {
-    public static class IEntityExtensions
+    public static bool IsNullOrDeleted(this IEntity entity)
     {
-        public static bool IsNullOrDeleted(this IEntity entity)
-        {
-            return entity?.Deleted ?? true;
-        }
+        return entity?.Deleted ?? true;
     }
 }

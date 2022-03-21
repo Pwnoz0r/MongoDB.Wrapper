@@ -1,14 +1,17 @@
-﻿using MongoDB.Wrapper.Abstractions;
+﻿#region
+
 using System;
+using MongoDB.Wrapper.Abstractions;
 
-namespace MongoDB.Wrapper
+#endregion
+
+namespace MongoDB.Wrapper;
+
+public abstract class Entity : IEntity
 {
-    public abstract class Entity : IEntity
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        public DateTimeOffset Added { get; set; }
+    public DateTimeOffset Added { get; set; }
 
-        public bool Deleted { get; set; }
-    }
+    public bool Deleted { get; set; }
 }
